@@ -27,3 +27,54 @@ Migrating to AddTitleToUsers (20230408194548)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7860688069577089005)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2023-04-08 16:55:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/login" for ::1 at 2023-04-08 16:56:43 -0300
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 28ms (ActiveRecord: 2.4ms | Allocations: 24675)
+
+
+Started POST "/signup" for ::1 at 2023-04-08 16:59:05 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester"}, "registration"=>{"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester"}}}
+[31mUnpermitted parameter: :title. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fe1b4869280>, params: {"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester"}, "controller"=>"users/registrations", "action"=>"create", "registration"=>{"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester"}}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-08 19:59:05.892708"], ["updated_at", "2023-04-08 19:59:05.892708"], ["title", nil]]
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 226ms (Views: 0.2ms | ActiveRecord: 15.6ms | Allocations: 25197)
+
+
+Started POST "/signup" for ::1 at 2023-04-08 17:01:27 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}, "registration"=>{"user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 192ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 7555)
+
+
+Started POST "/signup" for ::1 at 2023-04-08 17:01:31 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"teste@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}, "registration"=>{"user"=>{"email"=>"teste@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "teste@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-08 20:01:31.944822"], ["updated_at", "2023-04-08 20:01:31.944822"], ["title", "tester2"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 199ms (Views: 0.1ms | ActiveRecord: 11.2ms | Allocations: 4768)
+
+
+Started POST "/signup" for ::1 at 2023-04-08 17:02:21 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"teste@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}, "registration"=>{"user"=>{"email"=>"teste@test.com", "password"=>"[FILTERED]", "title"=>"tester2"}}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teste@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 186ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 3883)
+
+
