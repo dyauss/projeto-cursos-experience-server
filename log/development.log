@@ -97,3 +97,166 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 15ms (Views: 5.4ms | ActiveRecord: 3.6ms | Allocations: 11892)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-16 12:15:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/nimbus/.rvm/gems/ruby-3.1.1/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/nimbus/.rvm/gems/ruby-3.1.1/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.2ms | Allocations: 635)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 4993)
+
+
+Started DELETE "/users/8" for ::1 at 2023-04-16 12:15:56 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/users/8"):
+  
+Started DELETE "/users/8" for ::1 at 2023-04-16 12:16:56 -0300
+  
+NameError (undefined local variable or method `protect_from_forgery' for Api::V1::UsersController:Class
+
+	protect_from_forgery
+	^^^^^^^^^^^^^^^^^^^^):
+  
+app/controllers/api/v1/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started DELETE "/users/8" for ::1 at 2023-04-16 12:17:07 -0300
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `destroy'
+Completed 404 Not Found in 18ms (ActiveRecord: 4.9ms | Allocations: 3474)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=8):
+  
+app/controllers/api/v1/users_controller.rb:16:in `destroy'
+Started POST "/signup" for ::1 at 2023-04-16 12:17:36 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"kashiyuka", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"title"=>"kashiyuka", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kashiyuka@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (12.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "kashiyuka@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-16 15:17:36.436664"], ["updated_at", "2023-04-16 15:17:36.436664"], ["title", "kashiyuka"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 213ms (Views: 0.2ms | ActiveRecord: 13.3ms | Allocations: 13131)
+
+
+Started GET "/users/" for ::1 at 2023-04-16 12:17:44 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1315)
+
+
+Started DELETE "/users/3" for ::1 at 2023-04-16 12:17:50 -0300
+Processing by Api::V1::UsersController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `destroy'
+  [1m[36mUser Destroy (11.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `destroy'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 11.9ms | Allocations: 2196)
+
+
+Started GET "/users/" for ::1 at 2023-04-16 12:17:52 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 951)
+
+
+Started GET "/users" for ::1 at 2023-04-16 12:23:13 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.7ms | Allocations: 4212)
+
+
+Started PUT "/users/1" for ::1 at 2023-04-16 12:23:37 -0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"title"=>"a-chan", "email"=>"achan@test.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `update'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms | Allocations: 6024)
+
+
+  
+NoMethodError (undefined method `update_attributes' for #<User id: 1, email: "test@test.com", created_at: "2023-04-08 19:59:05.892708000 +0000", updated_at: "2023-04-08 19:59:05.892708000 +0000", title: nil>
+Did you mean?  update_attribute):
+  
+app/controllers/api/v1/users_controller.rb:11:in `update'
+Started PUT "/users/1" for ::1 at 2023-04-16 12:24:54 -0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"title"=>"a-chan", "email"=>"achan@test.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "achan@test.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2, "title" = $3 WHERE "users"."id" = $4[0m  [["email", "achan@test.com"], ["updated_at", "2023-04-16 15:24:54.124970"], ["title", "a-chan"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 7504)
+
+
+Started GET "/users" for ::1 at 2023-04-16 12:24:57 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 964)
+
+
+Started PUT "/users/1" for ::1 at 2023-04-16 12:25:41 -0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"title"=>"nocchi", "email"=>"achan@test.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "title" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-04-16 15:25:41.880229"], ["title", "nocchi"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 11.0ms | Allocations: 2526)
+
+
+Started GET "/users" for ::1 at 2023-04-16 12:25:45 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 941)
+
+
+Started PUT "/users/1" for ::1 at 2023-04-16 12:25:57 -0300
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"user"=>{"title"=>"kyary"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "title" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-04-16 15:25:57.678379"], ["title", "kyary"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `update'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 11.1ms | Allocations: 2522)
+
+
+Started GET "/users" for ::1 at 2023-04-16 12:26:00 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 941)
+
+
+Started GET "/users" for ::1 at 2023-04-16 12:49:42 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 4.2ms | Allocations: 3897)
+
+
