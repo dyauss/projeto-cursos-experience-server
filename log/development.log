@@ -260,3 +260,20 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 4.2ms | Allocations: 3897)
 
 
+Started GET "/users/1" for ::1 at 2023-04-17 21:13:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#getone as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `getone'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 11096)
+
+
+Started GET "/users/2" for ::1 at 2023-04-17 21:14:03 -0300
+Processing by Api::V1::UsersController#getone as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `getone'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 784)
+
+

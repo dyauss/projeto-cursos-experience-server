@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/users', to: 'api/v1/users#index'
+  get '/users/:id', to: 'api/v1/users#getone'
   delete '/users/:id', to: 'api/v1/users#destroy'
   put '/users/:id', to: 'api/v1/users#update'
 
