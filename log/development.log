@@ -277,3 +277,254 @@ Processing by Api::V1::UsersController#getone as */*
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 784)
 
 
+Started POST "/courses/" for ::1 at 2023-04-21 01:02:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230421035810_create_courses.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7860688069577089005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20230421035810)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "title" character varying, "topic" character varying, "subtopic" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230421035810"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7860688069577089005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/courses/" for ::1 at 2023-04-21 01:03:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant CoursesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/courses/" for ::1 at 2023-04-21 01:03:43 -0300
+  
+ActionController::RoutingError (uninitialized constant CoursesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/courses/" for ::1 at 2023-04-21 01:03:44 -0300
+  
+ActionController::RoutingError (uninitialized constant CoursesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/courses/" for ::1 at 2023-04-21 01:03:45 -0300
+  
+ActionController::RoutingError (uninitialized constant CoursesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started POST "/courses/" for ::1 at 2023-04-21 01:04:09 -0300
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "rails 7"], ["topic", "TI"], ["subtopic", "desenvolvimento web"], ["created_at", "2023-04-21 04:04:09.955891"], ["updated_at", "2023-04-21 04:04:09.955891"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.3ms | Allocations: 14232)
+
+
+  
+NoMethodError (undefined method `course_url' for #<Api::V1::CoursesController:0x00000000012610>
+
+              target.public_send(method, *args)
+                    ^^^^^^^^^^^^
+Did you mean?  courses_url):
+  
+app/controllers/api/v1/courses_controller.rb:21:in `create'
+Started GET "/courses/" for ::1 at 2023-04-21 01:05:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses"):
+  
+Started GET "/courses/" for ::1 at 2023-04-21 01:06:00 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.3ms | Allocations: 3487)
+
+
+Started POST "/courses/" for ::1 at 2023-04-21 01:06:44 -0300
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"mysql", "topic"=>"TI", "subtopic"=>"banco de dados"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "mysql"], ["topic", "TI"], ["subtopic", "banco de dados"], ["created_at", "2023-04-21 04:06:44.058032"], ["updated_at", "2023-04-21 04:06:44.058032"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms | Allocations: 5372)
+
+
+  
+NoMethodError (undefined method `course_url' for #<Api::V1::CoursesController:0x000000000168f0>
+
+              target.public_send(method, *args)
+                    ^^^^^^^^^^^^
+Did you mean?  courses_url):
+  
+app/controllers/api/v1/courses_controller.rb:21:in `create'
+Started POST "/courses/" for ::1 at 2023-04-21 01:09:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"mysql", "topic"=>"TI", "subtopic"=>"banco de dados"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "mysql"], ["topic", "TI"], ["subtopic", "banco de dados"], ["created_at", "2023-04-21 04:09:49.554013"], ["updated_at", "2023-04-21 04:09:49.554013"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 11140)
+
+
+Started GET "/courses/" for ::1 at 2023-04-21 01:10:14 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1365)
+
+
+Started DELETE "/courses/1" for ::1 at 2023-04-21 01:10:38 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/courses/1"):
+  
+Started DELETE "/courses/1" for ::1 at 2023-04-21 01:11:35 -0300
+Processing by Api::V1::CoursesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `destroy'
+  [1m[36mCourse Destroy (0.6ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 3.1ms | Allocations: 5523)
+
+
+Started GET "/courses/" for ::1 at 2023-04-21 01:11:39 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1035)
+
+
+Started GET "/courses/" for ::1 at 2023-04-21 01:12:28 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started PUT "/courses/3" for ::1 at 2023-04-21 01:12:44 -0300
+Processing by Api::V1::CoursesController#update as */*
+  Parameters: {"course"=>{"title"=>"mysqlworkbench"}, "id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mCourse Update (0.1ms)[0m  [1m[33mUPDATE "courses" SET "title" = $1, "updated_at" = $2 WHERE "courses"."id" = $3[0m  [["title", "mysqlworkbench"], ["updated_at", "2023-04-21 04:12:44.225190"], ["id", 3]]
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:29:in `update'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 2652)
+
+
+Started GET "/courses/" for ::1 at 2023-04-21 01:12:47 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started POST "/courses/3" for ::1 at 2023-04-21 01:13:29 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/courses/3"):
+  
+Started POST "/courses/" for ::1 at 2023-04-21 01:13:36 -0300
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"postgresql", "topic"=>"TI", "subtopic"=>"banco de dados"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "postgresql"], ["topic", "TI"], ["subtopic", "banco de dados"], ["created_at", "2023-04-21 04:13:36.010694"], ["updated_at", "2023-04-21 04:13:36.010694"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 201 Created in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2031)
+
+
