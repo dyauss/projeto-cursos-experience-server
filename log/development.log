@@ -528,3 +528,60 @@ Processing by Api::V1::CoursesController#create as */*
 Completed 201 Created in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2031)
 
 
+Started GET "/courses/" for ::1 at 2023-04-21 01:16:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 2.7ms | Allocations: 9098)
+
+
+Started GET "/courses/3" for ::1 at 2023-04-21 01:16:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/3"):
+  
+Started GET "/courses/3" for ::1 at 2023-04-21 01:17:00 -0300
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}, "id"=>"3"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 4119)
+
+
+Started GET "/courses/" for ::1 at 2023-04-21 01:20:05 -0300
+Processing by Api::V1::CoursesController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1044)
+
+
+Started GET "/courses/1" for ::1 at 2023-04-21 01:23:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+Completed 404 Not Found in 6ms (ActiveRecord: 2.6ms | Allocations: 3230)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=1):
+  
+app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+Started GET "/courses/" for ::1 at 2023-04-21 01:23:43 -0300
+Processing by Api::V1::CoursesController#index as */*
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 7671)
+
+
+Started GET "/courses/2" for ::1 at 2023-04-21 01:23:47 -0300
+Processing by Api::V1::CoursesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/courses_controller.rb:44:in `set_course'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 783)
+
+
