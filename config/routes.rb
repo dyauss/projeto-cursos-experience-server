@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'api/v1/users#destroy'
   put '/users/:id', to: 'api/v1/users#update'
 
-  get '/course/:id', to: 'api/v1/courses#show'
+  get '/courses/:id', to: 'api/v1/courses#show'
   get '/courses', to: 'api/v1/courses#index'
   post '/courses', to: 'api/v1/courses#create'
   delete '/courses/:id', to: 'api/v1/courses#destroy'
