@@ -585,3 +585,28 @@ Processing by Api::V1::CoursesController#show as */*
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 783)
 
 
+Started POST "/courses/" for ::1 at 2023-04-27 17:26:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"mysql", "topic"=>"TI", "subtopic"=>"banco de dados"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (1.3ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "mysql"], ["topic", "TI"], ["subtopic", "banco de dados"], ["created_at", "2023-04-27 20:26:25.816197"], ["updated_at", "2023-04-27 20:26:25.816197"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 11164)
+
+
+Started POST "/courses/" for ::1 at 2023-04-27 17:26:36 -0300
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"", "topic"=>"", "subtopic"=>""}}
+Completed 422 Unprocessable Entity in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3807)
+
+
+Started POST "/courses/" for ::1 at 2023-04-27 17:27:13 -0300
+Processing by Api::V1::CoursesController#create as */*
+  Parameters: {"course"=>{"title"=>"mysql", "topic"=>"TI", "subtopic"=>""}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3171)
+
+
