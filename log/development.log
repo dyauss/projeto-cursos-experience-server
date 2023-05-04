@@ -610,3 +610,75 @@ Processing by Api::V1::CoursesController#create as */*
 Completed 422 Unprocessable Entity in 5ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3171)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7860688069577089005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAdmToUser (20230504040628)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "adm" boolean[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230504040628"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7860688069577089005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2023-05-04 01:07:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 3.4ms | Allocations: 11103)
+
+
+Started POST "/users/signup" for ::1 at 2023-05-04 01:19:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+Started POST "/users/signup" for ::1 at 2023-05-04 01:19:26 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/signup"):
+  
+Started POST "/signup" for ::1 at 2023-05-04 01:19:33 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"bluey", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}, "registration"=>{"user"=>{"title"=>"bluey", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}}}
+[31mUnpermitted parameter: :adm. Context: { controller: Users::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f1f87c3d068>, params: {"user"=>{"title"=>"bluey", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}, "controller"=>"users/registrations", "action"=>"create", "registration"=>{"user"=>{"title"=>"bluey", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kashiyuka@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title", "adm") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "kashiyuka@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-05-04 04:19:33.387692"], ["updated_at", "2023-05-04 04:19:33.387692"], ["title", "bluey"], ["adm", nil]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 219ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 17252)
+
+
+Started GET "/users" for ::1 at 2023-05-04 01:19:37 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1546)
+
+
+Started POST "/signup" for ::1 at 2023-05-04 01:20:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"greeny", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}, "registration"=>{"user"=>{"title"=>"greeny", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]", "adm"=>true}}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kashiyuka@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 211ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 16854)
+
+
+Started POST "/signup" for ::1 at 2023-05-04 01:21:04 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"greeny", "email"=>"kashiyukas@test.com", "password"=>"[FILTERED]", "adm"=>true}, "registration"=>{"user"=>{"title"=>"greeny", "email"=>"kashiyukas@test.com", "password"=>"[FILTERED]", "adm"=>true}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kashiyukas@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title", "adm") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "kashiyukas@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-05-04 04:21:04.397360"], ["updated_at", "2023-05-04 04:21:04.397360"], ["title", "greeny"], ["adm", true]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 201ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 5255)
+
+
+Started GET "/users" for ::1 at 2023-05-04 01:21:09 -0300
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1674)
+
+
