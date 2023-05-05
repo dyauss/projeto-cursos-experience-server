@@ -682,3 +682,62 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1674)
 
 
+Started GET "/users" for ::1 at 2023-05-04 22:36:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as */*
+  Parameters: {"course"=>{"title"=>"rails 7", "topic"=>"TI", "subtopic"=>"desenvolvimento web"}, "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 5.2ms | ActiveRecord: 4.5ms | Allocations: 10413)
+
+
+Started POST "/signup" for ::1 at 2023-05-04 22:37:07 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"persona", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"title"=>"persona", "email"=>"kashiyuka@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kashiyuka@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 218ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 7158)
+
+
+Started POST "/signup" for ::1 at 2023-05-04 22:37:13 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"persona", "email"=>"persona@test.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"title"=>"persona", "email"=>"persona@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "persona@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "title", "adm") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "persona@test.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-05-05 01:37:13.696183"], ["updated_at", "2023-05-05 01:37:13.696183"], ["title", "persona"], ["adm", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 209ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 5156)
+
+
+Started POST "/login/" for ::1 at 2023-05-04 22:38:00 -0300
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "persona@test.com"], ["LIMIT", 1]]
+Completed 200 OK in 202ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2558)
+
+
+Started POST "/login/" for ::1 at 2023-05-04 23:01:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "persona@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 212ms (ActiveRecord: 2.7ms | Allocations: 13036)
+
+
+Started POST "/login/" for ::1 at 2023-05-04 23:02:04 -0300
+Processing by Users::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"persona@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "persona@test.com"], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2240)
+
+
+Started POST "/signup" for ::1 at 2023-05-04 23:33:56 -0300
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"user"=>{"title"=>"persona", "email"=>"persona@test.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"title"=>"persona", "email"=>"persona@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "persona@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 213ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 7719)
+
+
