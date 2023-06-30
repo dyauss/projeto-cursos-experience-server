@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :chapters
+
+  get '/courses/:id/chapters', to: 'chapters#show_from_course'
+
+
   # resources :courses
 
   get '/users', to: 'api/v1/users#index'
