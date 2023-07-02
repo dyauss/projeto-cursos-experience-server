@@ -8,8 +8,8 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: nimbus
-  password: deploychan
+  # username: nimbus
+  # password: deploychan
 
 development:
   <<: *default
@@ -24,4 +24,5 @@ test:
 
 production:
   <<: *default
-  database: db/cursos_exp_prod_pg
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: db/cursos_exp_prod_pg
