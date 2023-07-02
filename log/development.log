@@ -9252,3 +9252,576 @@ Processing by Api::V1::CoursesController#index as HTML
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1039)
 
 
+Started GET "/courses/" for ::1 at 2023-06-29 21:33:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 9791)
+
+
+Started GET "/courses/" for ::1 at 2023-06-29 21:33:16 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.1ms | Allocations: 1042)
+
+
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:33:19 -0300
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:33:19 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"1"}
+Processing by ChaptersController#show_from_course as HTML
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 6906)
+
+
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 4225)
+
+
+Started GET "/chapters/1" for 127.0.0.1 at 2023-06-29 21:33:20 -0300
+Started GET "/chapters/1" for 127.0.0.1 at 2023-06-29 21:33:20 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 962)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 663)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:23 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:23 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1085)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1039)
+
+
+Started GET "/courses/2/chapters" for 127.0.0.1 at 2023-06-29 21:33:24 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 2]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 967)
+
+
+Started GET "/courses/2/chapters" for 127.0.0.1 at 2023-06-29 21:33:24 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 2]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 968)
+
+
+Started GET "/chapters/3" for 127.0.0.1 at 2023-06-29 21:33:25 -0300
+Started GET "/chapters/3" for 127.0.0.1 at 2023-06-29 21:33:25 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 659)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.0ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 650)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:27 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:27 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1058)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:33:28 -0300
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:33:28 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 855)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 845)
+
+
+Started GET "/chapters/1" for 127.0.0.1 at 2023-06-29 21:33:29 -0300
+Started GET "/chapters/1" for 127.0.0.1 at 2023-06-29 21:33:29 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 660)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 650)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:31 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:31 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1051)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:33:31 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:33:31 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 720)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:34 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:33:34 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1043)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:34:58 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:34:58 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 728)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:34:59 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:34:59 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:35:02 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:35:02 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.0ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 722)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.0ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 716)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:38:21 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:38:21 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1059)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:40:57 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:40:57 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:40:58 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 845)
+
+
+Started GET "/courses/1/chapters" for 127.0.0.1 at 2023-06-29 21:40:58 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 1]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 845)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:41:03 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:41:03 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1052)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:41:04 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:41:04 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 723)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started POST "/chapters/" for 127.0.0.1 at 2023-06-29 21:44:36 -0300
+Processing by ChaptersController#create as HTML
+  Parameters: {"title"=>"Introdução", "number"=>1, "content"=>"<h4>O que estudar?</h4><p>&nbsp;</p><p>De acordo com o site <a href=\"https://redacaonline.com.br/blog/primeira-fase-da-fuvest-o-que-mais-cai-em-cada-disciplina/\">Redação Online</a>, os temas que mais caem na Fuvest são:</p><p>1) Geometria plana (13,95%)</p><p>2) Trigonometria (12,21%)</p><p>3) Geometria espacial (10,47%)</p><p>4)&nbsp; Funções (9,88%)</p><p>5) Geometria analítica (8,72%)</p><p>6) Grandezas proporcionais (6,40%)</p><p>7) Probabilidade ( 6,98%)</p><p>8) Logaritmos (6,40%)</p><p>9) Sistemas lineares (4,65%)</p><p>10) Matemática financeira (2,33%)</p><p>11) Análise combinatória (1,74%)</p><p>12) Progressão geométrica ( 1,74%)</p><p>&nbsp;</p><p>Então, vamos aprender um por um!</p>", "course_id"=>"3", "chapter"=>{"title"=>"Introdução", "number"=>1, "content"=>"<h4>O que estudar?</h4><p>&nbsp;</p><p>De acordo com o site <a href=\"https://redacaonline.com.br/blog/primeira-fase-da-fuvest-o-que-mais-cai-em-cada-disciplina/\">Redação Online</a>, os temas que mais caem na Fuvest são:</p><p>1) Geometria plana (13,95%)</p><p>2) Trigonometria (12,21%)</p><p>3) Geometria espacial (10,47%)</p><p>4)&nbsp; Funções (9,88%)</p><p>5) Geometria analítica (8,72%)</p><p>6) Grandezas proporcionais (6,40%)</p><p>7) Probabilidade ( 6,98%)</p><p>8) Logaritmos (6,40%)</p><p>9) Sistemas lineares (4,65%)</p><p>10) Matemática financeira (2,33%)</p><p>11) Análise combinatória (1,74%)</p><p>12) Progressão geométrica ( 1,74%)</p><p>&nbsp;</p><p>Então, vamos aprender um por um!</p>", "course_id"=>"3"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mChapter Create (0.6ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "number", "content", "created_at", "updated_at", "course_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Introdução"], ["number", 1], ["content", "<h4>O que estudar?</h4><p>&nbsp;</p><p>De acordo com o site <a href=\"https://redacaonline.com.br/blog/primeira-fase-da-fuvest-o-que-mais-cai-em-cada-disciplina/\">Redação Online</a>, os temas que mais caem na Fuvest são:</p><p>1) Geometria plana (13,95%)</p><p>2) Trigonometria (12,21%)</p><p>3) Geometria espacial (10,47%)</p><p>4)&nbsp; Funções (9,88%)</p><p>5) Geometria analítica (8,72%)</p><p>6) Grandezas proporcionais (6,40%)</p><p>7) Probabilidade ( 6,98%)</p><p>8) Logaritmos (6,40%)</p><p>9) Sistemas lineares (4,65%)</p><p>10) Matemática financeira (2,33%)</p><p>11) Análise combinatória (1,74%)</p><p>12) Progressão geométrica ( 1,74%)</p><p>&nbsp;</p><p>Então, vamos aprender um por um!</p>"], ["created_at", "2023-06-30 00:44:36.487981"], ["updated_at", "2023-06-30 00:44:36.487981"], ["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+Completed 201 Created in 19ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 6777)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:36 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:36 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1010)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 998)
+
+
+Started GET "/chapters/5" for 127.0.0.1 at 2023-06-29 21:44:38 -0300
+Started GET "/chapters/5" for 127.0.0.1 at 2023-06-29 21:44:38 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 811)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mChapter Load (0.0ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 803)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:50 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 998)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:50 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 998)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:53 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:53 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1002)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 998)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:44:53 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:44:53 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:57 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:44:57 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 1001)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 999)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:02 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:02 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1045)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1039)
+
+
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:45:07 -0300
+Started GET "/courses/3/chapters" for 127.0.0.1 at 2023-06-29 21:45:07 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1007)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 3]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 998)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:14 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:14 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started POST "/courses/" for 127.0.0.1 at 2023-06-29 21:45:25 -0300
+Processing by Api::V1::CoursesController#create as HTML
+  Parameters: {"title"=>"Geometria plana", "topic"=>"Matemática", "subtopic"=>"Matemática", "course"=>{"title"=>"Geometria plana", "topic"=>"Matemática", "subtopic"=>"Matemática"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("title", "topic", "subtopic", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Geometria plana"], ["topic", "Matemática"], ["subtopic", "Matemática"], ["created_at", "2023-06-30 00:45:25.567727"], ["updated_at", "2023-06-30 00:45:25.567727"]]
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:20:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2284)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:25 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 21:45:25 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Processing by Api::V1::CoursesController#index as HTML
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1444)
+
+
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1581)
+
+
+Started GET "/courses/13/chapters" for 127.0.0.1 at 2023-06-29 21:45:28 -0300
+Started GET "/courses/13/chapters" for 127.0.0.1 at 2023-06-29 21:45:28 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 13]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 766)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 13]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 718)
+
+
+Started POST "/chapters/" for 127.0.0.1 at 2023-06-29 21:49:00 -0300
+Processing by ChaptersController#create as HTML
+  Parameters: {"title"=>"Seno, Cosseno e Tangente", "number"=>1, "content"=>"<p>Fontes:<br>&nbsp;</p><p><a href=\"https://www.todamateria.com.br/seno-cosseno-e-tangente/\">Toda Matéria</a></p>", "course_id"=>"13", "chapter"=>{"title"=>"Seno, Cosseno e Tangente", "number"=>1, "content"=>"<p>Fontes:<br>&nbsp;</p><p><a href=\"https://www.todamateria.com.br/seno-cosseno-e-tangente/\">Toda Matéria</a></p>", "course_id"=>"13"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mChapter Create (0.3ms)[0m  [1m[32mINSERT INTO "chapters" ("title", "number", "content", "created_at", "updated_at", "course_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Seno, Cosseno e Tangente"], ["number", 1], ["content", "<p>Fontes:<br>&nbsp;</p><p><a href=\"https://www.todamateria.com.br/seno-cosseno-e-tangente/\">Toda Matéria</a></p>"], ["created_at", "2023-06-30 00:49:00.219311"], ["updated_at", "2023-06-30 00:49:00.219311"], ["course_id", 13]]
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/chapters_controller.rb:26:in `create'
+Completed 201 Created in 9ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 3067)
+
+
+Started GET "/courses/13/chapters" for 127.0.0.1 at 2023-06-29 21:49:00 -0300
+Started GET "/courses/13/chapters" for 127.0.0.1 at 2023-06-29 21:49:00 -0300
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 13]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 904)
+
+
+Processing by ChaptersController#show_from_course as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."course_id" = ?[0m  [["course_id", 13]]
+  ↳ app/controllers/chapters_controller.rb:19:in `show_from_course'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 896)
+
+
+Started GET "/chapters/6" for 127.0.0.1 at 2023-06-29 21:49:01 -0300
+Started GET "/chapters/6" for 127.0.0.1 at 2023-06-29 21:49:01 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 749)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mChapter Load (0.1ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 701)
+
+
+Started GET "/chapters/6" for 127.0.0.1 at 2023-06-29 23:05:32 -0300
+Started GET "/chapters/6" for 127.0.0.1 at 2023-06-29 23:05:32 -0300
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mChapter Load (0.2ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 871)
+
+
+Processing by ChaptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mChapter Load (0.0ms)[0m  [1m[34mSELECT "chapters".* FROM "chapters" WHERE "chapters"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/chapters_controller.rb:50:in `set_chapter'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 701)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 23:05:34 -0300
+Started GET "/courses/" for 127.0.0.1 at 2023-06-29 23:05:34 -0300
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1206)
+
+
+Processing by Api::V1::CoursesController#index as HTML
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/api/v1/courses_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1165)
+
+
