@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-# gem 'pg'
+gem 'pg'
 gem 'rack-cors'
 gem 'devise'
 gem 'jsonapi-serializer'
@@ -12,7 +12,7 @@ gem 'jsonapi-serializer'
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
