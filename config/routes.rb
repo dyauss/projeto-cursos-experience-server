@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   delete '/courses/:id', to: 'api/v1/courses#destroy'
   put '/courses/:id', to: 'api/v1/courses#update'
 
+  get '/topics', to: 'api/v1/courses#topics'
+  get '/topics/:title', to: 'api/v1/courses#topic'
+
+  get '/subtopics', to: 'api/v1/courses#subtopics'
+  get '/subtopics/:title', to: 'api/v1/courses#subtopic'
+
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
