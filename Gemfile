@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 # ruby "3.0.6"
 
-gem 'pg', '1.2.3'
+gem 'pg'
 gem 'rack-cors'
 gem 'devise'
 gem 'jsonapi-serializer'
